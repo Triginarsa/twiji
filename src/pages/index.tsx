@@ -4,7 +4,6 @@ import Image from "next/image";
 import { LoadingPage, LoadingSpinner } from "~/components/loading";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import Link from "next/link";
 import { PageLayout } from "~/components/layout";
 import { PostView } from "~/components/postview";
 
