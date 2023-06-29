@@ -22,13 +22,9 @@ const ProfileFeed = (props: { userId: string }) => {
 };
 
 const ProfilePage: NextPage<{ username: string }> = ({ username }) => {
-  const { data, isLoading } = api.profile.getUserByUsername.useQuery({
+  const { data } = api.profile.getUserByUsername.useQuery({
     username,
   });
-  if (isLoading) {
-    console.log("is loading...");
-  }
-
   if (!data) return <div>404</div>;
   return (
     <>
@@ -77,7 +73,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const username = slug.replace("@", "");
 
-  await ssg.profile.getUserByUsername.prefetch({ username: slug });
+  await ssg.profile.getUserByUsername.prefetch({ username });
 
   return {
     props: {
