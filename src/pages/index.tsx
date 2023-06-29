@@ -9,6 +9,7 @@ import Image from "next/image";
 import { LoadingPage, LoadingSpinner } from "~/components/loading";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 dayjs.extend(relativeTime);
 
@@ -93,9 +94,13 @@ const PostView = (props: PostWithUser) => {
       />
       <div className="flex flex-col">
         <div className="flex gap-1 text-slate-400">
-          <span className=" font-bold text-slate-200">{`@${author.username}`}</span>
+          <Link href={`/@${author.username}`}>
+            <span className=" font-bold text-slate-200">{`@${author.username}`}</span>
+          </Link>
           <span>·</span>
-          <span>{dayjs(post.createdAt).fromNow()}</span>
+          <Link href={`/post/${post.id}`}>
+            <span>{dayjs(post.createdAt).fromNow()}</span>
+          </Link>
         </div>
         <span className="text-xl">{post.content}</span>
       </div>
