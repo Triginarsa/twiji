@@ -12,7 +12,7 @@ Feeling sad 😢? Overjoyed 🥳? Puzzled 🤷‍♂️? Express it all in emoji
 This application is built using the rock-solid T3 Stack:
 
 * Next.js: Because we love a good React framework for JavaScript single-page applications.
-* NextAuth.js: Ensuring your emoji communications remain secure.
+* Clerk: Ensuring your emoji communications remain secure.
 * Prisma: Our magic wand for handling databases.
 * Tailwind CSS: Giving our emojis a stylish home.
 * tRPC: Building typesafe APIs because even emojis deserve type safety.
